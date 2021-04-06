@@ -1,17 +1,35 @@
 <template>
-    <div id="app">
-        <router-view/>
-    </div>
+<div id="app">
+    <Header/>
+    <router-view/>
+</div>
 </template>
+
+<script>
+import Header from '@/components/Header'
+export default {
+    components: { Header },
+}
+</script>
 
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1;
     font-family: "PingFang SC", "Microsoft Yahei", sans-serif;
     text-decoration: none;
+    list-style-type: none;
 }
+
+a {
+
+    outline: none;
+    color: hsla(40, 100%, 50%, 1);
+    transition: all ease, 0.3s;
+}
+a:hover { color: hsla(46, 100%, 50%, 1); }
 
 .btn {
     display: inline-block;

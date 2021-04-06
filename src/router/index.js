@@ -10,11 +10,31 @@ const routes = [
         name: 'Home',
         component: Home
     },
-    // {
-    //     path: '/product',
-    //     name: 'Product',
-    //     component: () => import('@/views/Product.vue')
-    // },
+    {
+        path: '/mobile_0',
+        name: 'Mobile_0',
+        component: () => import('@/views/Mobile_0.vue')
+    },
+    {
+        path: '/mobile_1',
+        name: 'Mobile_1',
+        component: () => import('@/views/Mobile_1.vue')
+    },
+    {
+        path: '/mobile_2',
+        name: 'Mobile_2',
+        component: () => import('@/views/Mobile_2.vue')
+    },
+    {
+        path: '/mobile_3',
+        name: 'Mobile_3',
+        component: () => import('@/views/Mobile_3.vue')
+    },
+    {
+        path: '/pc',
+        name: 'PC',
+        component: () => import('@/views/PC.vue')
+    },
 ]
 
 const router = new VueRouter({

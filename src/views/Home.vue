@@ -1,6 +1,5 @@
 <template>
 <div id="home">
-    <Header/>
     <div id="banner">
         <img :src="banner" id="banner-img">
         <div id="info">
@@ -11,39 +10,46 @@
                 <p id="name">Bo Huang</p>
             </div>
             <div id="info-right">
-                <p id="info-title">UI 设计 / 平面设计<span id="info-sub">2016 ~ 2021</span></p>
-                <p class="info-text">1. 参与过数个大型APP项目及线下活动的设计。</p>
-                <p class="info-text">2. 精通 Photoshop、Illustrator、After Effects、Indesign 及 Powerpoint 等设计软件。</p>
-                <p class="info-text">3. 掌握 HTML、CSS、JavaScript 等 Web 前端开发技术，熟悉 DIV+CSS 布局的 HTML 代码编写。</p>
+                <p id="info-title">UI 设计 / 平面设计<span id="info-sub">2016 ~ 2021.4</span></p>
+                <p class="info-text">1. 全日制本科<b>土木工程专业</b>，非艺术类、计算机类、心理学类专业，<b>对专业有强制要求的请忽略。</b></p>
+                <p class="info-text">2. 本作品集兼容 IE 9+， 但是 IE 9 下没有动画效果。</p>
+                <p class="info-text">3. 本作品集 Github 地址：<a href="https://github.com/butomissa/portfolio">github.com/butomissa/portfolio</a></p>
             </div>
         </div>
     </div>
-    <div class="module">
-        <div class="title">{{ title[1].main }}<div class="sub-title">{{ title[1].sub }}</div></div>
-        <div id="solution">
-            <a class="solution-item" v-for="(item, index) of solution" :key="'solution' + index" :href="item.link">
-                <img :src="item.img" class="solution-img">
-                <div class="solution-title">{{ item.title }}</div>
-                <div class="solution-text">{{ item.text }}</div>
-                <div class="solution-btn">查 看 详 情&nbsp;<span class="iconfont icon-arrow"/></div>
-            </a>
+    <div id="main">
+        <div class="base">
+            <p class="base-title">基本信息</p>
+            <ul>
+                <li class="base-item" v-for="(item, index) of base" :key="'base' + index">
+                    <svg><use :href="item.icon"/></svg>
+                    <a v-if="item.link" :href="item.link">{{ item.text }}</a>
+                    <p v-else>{{ item.text }}</p>
+                </li>
+            </ul>
         </div>
+        <div class="project" v-for="(type, val) of project" :key="'type' + val">
+            <p class="project-title">{{ type.text }}</p>
+            <ul>
+                <li v-for="(item, index) of type.item" :key="'project' + index">
+                    <a class="project-item" :href="item.link">
+                        <img :src="item.img" v-if="item.img">
+                        <div class="project-img" v-else/>
+                        <p class="project-text">{{ item.text }}</p>
+                        <p class="project-sub">{{ item.sub }}</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div style="clear: both"></div>
     </div>
-    <Footer/>
-    <Float/>
 </div>
 </template>
 
 <script>
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import Float from '@/components/Float'
 
 export default {
     name: 'Home',
-    components: {
-        Header, Footer, Float,
-    },
     mounted() {
     },
     beforeDestroy() {
@@ -54,20 +60,23 @@ export default {
         return {
             banner: require("@/assets/img/banner.jpg"),
             avatar: require("@/assets/img/avatar.png"),
-            title: [
-                { main: "深度融合物联场景 全方位赋能企业升级", sub: "聚焦低成本、轻量化、易部署、成效快四大要素打造物联产品" },
-                { main: "解决方案", sub: "聚焦行业积累和沉淀，为您打造专属行业解决方案" },
-                { main: "合作伙伴", sub: "在多个行业，为客户提供物联网专属服务" },
+            base: [
+                { icon: "#icon-school", text: "华南农业大学" },
+                { icon: "#icon-email", text: "r.m.t@foxmail.com" },
+                { icon: "#icon-wechat", text: "o-ya-su-mi" },
+                { icon: "#icon-phone", text: "13512792004" },
+                { icon: "#icon-github", text: "butomissa", link: "https://github.com/butomissa" },
             ],
-            solution: [
-                { title: "智慧楼宇解决方案", text: "智慧楼宇解决方案详细描述文案 智慧楼宇解决方案详细描述文案智慧楼宇解决方案详细描述文案智慧楼宇解决方案详细描述文案智慧楼宇解决方案详细描述文案智慧楼宇解决方案详细描述文案",
-                img: require("@/assets/img/solution-0.jpg"), link: "/solution" },
-                { title: "智慧园区解决方案", text: "产品4 详细描述文案",
-                img: require("@/assets/img/solution-1.jpg"), link: "/solution" },
-                { title: "智慧消防解决方案", text: "利用物联网技术和云计算技术，提供独立式感烟报警、光电式火灾报警、无线手动报警、消防水压监测、消防水库液位监测等智慧消防服务。",
-                img: require("@/assets/img/solution-2.jpg"), link: "/solution" },
-                { title: "更多解决方案", text: "更多专属行业解决方案",
-                img: require("@/assets/img/solution-3.jpg"), link: "/solution" },
+            project: [
+                { text: "PC端", item: [
+                    { img: require("@/assets/img/cover-4.jpg"), text: "广东联通物联网门户网站", sub: "PC端/移动端", link: "index.html#/pc" },
+                ]},
+                { text: "移动端", item: [
+                    { img: require("@/assets/img/cover-0.jpg"), text: "互联网家智慧餐厅", sub: "小程序", link: "index.html#/mobile_0" },
+                    { img: require("@/assets/img/cover-1.jpg"), text: "小沃管家饭堂小程序", sub: "小程序", link: "index.html#/mobile_1" },
+                    { img: require("@/assets/img/cover-2.jpg"), text: "新互联网家", sub: "小程序", link: "index.html#/mobile_2" },
+                    { img: require("@/assets/img/cover-3.jpg"), text: "一起沃", sub: "Android / iOS", link: "index.html#/mobile_3" },
+                ]},
             ],
         }
     },
@@ -78,21 +87,23 @@ export default {
 #home {
     width: 100%;
 }
+
+/* 顶部 */
 #banner {
     position: relative;
-    height: 640px;
+    height: 500px;
     width: 100%;
     overflow: hidden;
 }
 #banner-img {
     position: absolute;
     margin-left: calc(50% - 960px);
-    height: 540px;
+    height: 400px;
     width: 1920px;
 }
 #info {
     position: absolute;
-    margin: 360px auto auto calc(50% - 450px);
+    margin: 200px auto auto calc(50% - 450px);
     height: 240px;
     width: 900px;
     border-radius: 10px;
@@ -104,13 +115,13 @@ export default {
     margin: 40px auto;
     padding: 0 80px;
     text-align: center;
-    box-shadow: 2px 0 0 -1px hsla(0, 0%, 0%, 0.2);
+    box-shadow: 2px 0 0 -1px hsla(0, 0%, 0%, 0.1);
 }
 #avatar {
     height: 120px;
     width: 120px;
     border-radius: 50%;
-    border: 3px solid hsla(48, 100%, 60%, 1);
+    border: 3px solid hsla(40, 100%, 50%, 1);
 }
 #avatar-img {
     margin: 5px;
@@ -127,12 +138,12 @@ export default {
 }
 #info-right {
     float: left;
-    padding: 40px 80px;
+    padding: 46px 80px;
     height: 240px;
     width: 620px;
 }
 #info-title {
-    padding: 0 0 6px 0;
+    padding: 0 0 10px 0;
     font-size: 24px;
     line-height: 24px;
     font-weight: 600;
@@ -143,110 +154,88 @@ export default {
     margin: auto auto auto 16px;
     font-style: italic;
     letter-spacing: 4px;
-    color: hsla(0, 0%, 84%, 1);
+    color: hsla(0, 0%, 80%, 1);
 }
 .info-text {
     margin: 10px auto auto 20px;
     font-size: 15px;
-    line-height: 20px;
+    line-height: 22px;
     text-indent: -20px;
     color: hsla(0, 0%, 60%, 1);
 }
+.info-text > b { color: hsla(0, 0%, 40%, 1); }
 
-.module {
-    position: relative;
-    width: 100%;
-    max-width: 1920px;
-    overflow: hidden;
-}
-.title {
-    padding: 70px 0 0 0;
-    width: 100%;
-    font-size: 28px;
-    font-weight: 600;
-    text-align: center;
-    color: hsla(0, 0%, 13%, 1);
-    z-index: 2;
-}
-.sub-title {
-    padding: 10px 0 0 0;
-    font-size: 16px;
-    font-weight: 400;
-    color: hsla(0, 0%, 57%, 0.7);
-}
-.float-title {
-    position: absolute;
-    top: 0;
-}
-
-
-#solution {
-    margin-left: calc(50vw - 600px);
+/* 主区域 */
+#main {
+    margin: auto;
     width: 1200px;
 }
-.solution-item {
-    position: relative;
+.base {
     float: left;
-    margin: 44px 25px 6px 25px;
-    height: 240px;
-    width: 550px;
-    background: hsla(0, 0%, 20%, 1);
-    z-index: 10;
-    transition: all ease, 0.3s;
+    padding: 0 0 30px 0;
+    width: 240px;
+    border: 1px solid hsla(0, 0%, 0%, 0.1);
 }
-.solution-item:hover {
-    transform: scale(1.05);
-    background: hsla(200, 56%, 32%, 1);
+.base-title {
+    padding: 14px 0 14px 14px;
+    font-size: 14px;
+    color: hsla(0, 0%, 60%, 1);
+    background: hsla(0, 0%, 0%, 0.025);
 }
-.solution-item:hover > .solution-title { margin-top: 40px; }
-.solution-item:hover > .solution-text { height: 72px; }
-.solution-item:hover > .solution-btn { padding: 10px; height: 46px; }
-.solution-img {
-    position: absolute;
-    height: 100%;
-    opacity: 0.4;
-    z-index: -1;
+.base-item > svg {
+    float: left;
+    margin: 0 10px 0 20px;
+    height: 24px;
+    width: 24px;
 }
-.solution-img, .solution-img:hover, .solution-img:visited {
-    border: 0px; /* IE 9/10 超链接图片边框 */
-}
-.solution-title {
-    margin: 100px auto 16px auto;
-    width: 100%;
-    font-size: 26px;
-    font-weight: 600;
-    text-align: center;
-    color: hsla(0, 0%, 100%, 1);
-    transition: all ease, 0.3s;
-}
-.solution-text {
-    margin: 0 auto;
-    display: -webkit-box;
-    height: 0px;
-    width: 400px;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
-    overflow: hidden;
+.base-item > p {
+    margin: 20px auto 0 auto;
     font-size: 16px;
     line-height: 24px;
-    text-align: justify;
-    color: hsla(0, 0%, 100%, 1);
+    color: hsla(0, 0%, 40%, 1);
+}
+.base-item > a {
+    display: block;
+    margin: 20px auto 0 auto;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.project {
+    float: right;
+    width: 930px;
+}
+.project-title {
+    padding: 15px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.1);
+}
+.project-item {
+    float: left;
+    margin: 15px;
+    height: 210px;
+    width: 280px;
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 30px 24px -30px hsla(0, 0%, 0%, 0.1);
     transition: all ease, 0.3s;
 }
-.solution-btn {
-    position: absolute;
-    bottom: 0;
-    height: 0;
+.project-item:hover {
+    box-shadow: 0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 30px 24px -30px hsla(0, 0%, 0%, 0.3);
+}
+.project-img {
+    height: 140px;
     width: 100%;
-    font-size: 18px;
-    text-align: center;
-    overflow: hidden;
-    color: hsla(0, 0%, 100%, 1);
-    background: hsla(0, 0%, 0%, 0.2);
-    transition: all ease, 0.3s;
+    background: hsla(0, 0%, 0%, 0.1);
 }
-.solution-btn > .icon-arrow {
-    display: inline-block;
-    transform: rotate(-90deg);
+.project-text {
+    padding: 12px;
+    font-weight: 600;
+    color: hsla(0, 0%, 20%, 1);
+}
+.project-sub {
+    padding-left: 12px;
+    font-size: 14px;
+    color: hsla(40, 100%, 50%, 1);
 }
 </style>

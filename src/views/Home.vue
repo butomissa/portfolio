@@ -33,8 +33,7 @@
             <ul>
                 <li v-for="(item, index) of type.item" :key="'project' + index">
                     <a class="project-item" :href="item.link">
-                        <img :src="item.img" v-if="item.img">
-                        <div class="project-img" v-else/>
+                        <img :src="item.img" class="project-img">
                         <p class="project-text">{{ item.text }}</p>
                         <p class="project-sub">{{ item.sub }}</p>
                     </a>
@@ -226,6 +225,7 @@ export default {
 .project-img {
     height: 140px;
     width: 100%;
+    border: none;
     background: hsla(0, 0%, 0%, 0.1);
 }
 .project-text {

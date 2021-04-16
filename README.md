@@ -1,4 +1,8 @@
 ## portfolio
+# 2021-04-16
+v0.2
+
+update data screen works
 # 2021-04-06
 v0.1
 

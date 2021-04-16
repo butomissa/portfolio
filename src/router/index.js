@@ -31,9 +31,14 @@ const routes = [
         component: () => import('@/views/Mobile_3.vue')
     },
     {
-        path: '/pc',
-        name: 'PC',
-        component: () => import('@/views/PC.vue')
+        path: '/pc_0',
+        name: 'PC_0',
+        component: () => import('@/views/PC_0.vue')
+    },
+    {
+        path: '/pc_1',
+        name: 'PC_1',
+        component: () => import('@/views/PC_1.vue')
     },
 ]
 

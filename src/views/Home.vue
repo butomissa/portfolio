@@ -68,7 +68,8 @@ export default {
             ],
             project: [
                 { text: "PC端", item: [
-                    { img: require("@/assets/img/cover-4.jpg"), text: "广东联通物联网门户网站", sub: "PC端/移动端", link: "index.html#/pc" },
+                    { img: require("@/assets/img/cover-4.jpg"), text: "广东联通物联网门户网站", sub: "PC端/移动端", link: "index.html#/pc_0" },
+                    { img: require("@/assets/img/cover-5.jpg"), text: "数据大屏系列", sub: "PC端", link: "index.html#/pc_1" },
                 ]},
                 { text: "移动端", item: [
                     { img: require("@/assets/img/cover-0.jpg"), text: "互联网家智慧餐厅", sub: "小程序", link: "index.html#/mobile_0" },

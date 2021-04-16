@@ -12,7 +12,6 @@
             <p class="text">其中最终上线模块<b> 22 </b>个，绘制页面<b> 337 </b>个。</p>
             <p class="text">主要工具软件：<b>Photoshop、Illustrator、Axure RP</b></p>
         </div>
-    <div style="clear: both"></div>
     </div>
     <div id="main">
         <img class="img" :src="item" v-for="(item, index) of img" :key="index">
@@ -90,34 +89,6 @@ export default {
     width: calc(100% - 40px);
     background: hsla(0, 0%, 90%, 1);
 }
-#info-right {
-    float: left;
-    padding: 46px 80px;
-    height: 240px;
-    width: 620px;
-}
-#info-title {
-    padding: 0 0 10px 0;
-    font-size: 24px;
-    line-height: 24px;
-    font-weight: 600;
-    color: hsla(0, 0%, 20%, 1);
-}
-#info-sub {
-    font-size: 22px;
-    margin: auto auto auto 16px;
-    font-style: italic;
-    letter-spacing: 4px;
-    color: hsla(0, 0%, 80%, 1);
-}
-.info-text {
-    margin: 10px auto auto 20px;
-    font-size: 15px;
-    line-height: 22px;
-    text-indent: -20px;
-    color: hsla(0, 0%, 60%, 1);
-}
-.info-text > b { color: hsla(0, 0%, 40%, 1); }
 
 .img {
     margin: 40px auto 0 auto;

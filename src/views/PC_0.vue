@@ -3,13 +3,16 @@
     <div id="info">
         <img :src="logo" id="logo">
         <div id="intro">
-            <p class="title">新互联网家</p>
-            <p class="text">新互联网家侧重小区功能的物业管理类 APP，是联通进入小区物业管理服务体系的一个尝试，拓展线下业务线及与宽带业务协同发展。主要是小程序客户端，其次是 iOS 和 Android 客户端。</p>
-            <p class="text">该项目因业务调整，目前已停止运营。</p>
+            <p class="title">广东联通物联网门户网站</p>
+            <p class="text">广东联通物联网门户网站是广东联通的物联网连接管理统一平台，用于宣传产品、方案以及实现客户对产品的可视化管理。分为 PC 端和移动端。</p>
+            <p class="text">该项目正在内部测试，预计 2021 年 4 月份上线。</p>
             <div class="split"/>
-            <p class="text">项目主要工作：负责新互联网家主体 UI/UE 设计、部分相关活动页 UI 及物料制作，及 APP 新功能需求涉及的 UI 优化。</p>
-            <p class="text">绘制页面共<b>超过 100 </b>个。</p>
-            <p class="text">主要工具软件：<b>Photoshop、Illustrator、Axure RP</b></p>
+            <p class="text">项目主要工作：负责整个项目的产品设计、UI/UE 设计以及项目前端样式相关的 HTML、CSS 及 JS 代码。</p>
+            <p class="text">脱敏前端样式代码可见 Github 仓库：</p>
+            <p class="text">PC 端：<b><a href="https://github.com/butomissa/website-design">github.com/butomissa/website-design</a></b></p>
+            <p class="text">移动端：<b><a href="https://github.com/butomissa/mobile-design">github.com/butomissa/mobile-design</a></b></p>
+            <p class="text">功能模块设计共<b> 13 </b>个，组件<b> 5 </b>个。全部使用<b> Vue </b>实现。</p>
+            <p class="text">主要工具软件：<b>Visual Studio Code、Photoshop、Illustrator</b></p>
         </div>
     </div>
     <div id="main">
@@ -29,15 +32,9 @@ export default {
     },
     data() {
         return {
-            logo: require("@/assets/img/logo-2.png"),
+            logo: require("@/assets/img/logo-4.png"),
             img: [
-                require("@/assets/mobile_2/0.jpg"),
-                require("@/assets/mobile_2/1.jpg"),
-                require("@/assets/mobile_2/2.jpg"),
-                require("@/assets/mobile_2/3.jpg"),
-                require("@/assets/mobile_2/4.jpg"),
-                require("@/assets/mobile_2/5.jpg"),
-                require("@/assets/mobile_2/6.jpg"),
+                require("@/assets/pc_0/img.jpg"),
             ],
         }
     },

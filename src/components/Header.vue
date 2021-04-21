@@ -32,7 +32,8 @@ export default {
             menu: [
                 { text: "作品集首页", link: "index.html#/" },
                 { text: "PC端", item: [
-                    { text: "广东联通物联网门户网站", link: "index.html#/pc" },
+                    { text: "广东联通物联网门户网站", link: "index.html#/pc_0" },
+                    { text: "数据大屏系列", link: "index.html#/pc_1" },
                 ]},
                 { text: "移动端", item: [
                     { text: "互联网家智慧餐厅", link: "index.html#/mobile_0" },
@@ -49,7 +50,7 @@ export default {
 
 <style scoped>
 #nav-container {
-    position: absolute;
+    position: fixed;
     top: 0;
     height: 60px;
     width: 100%;

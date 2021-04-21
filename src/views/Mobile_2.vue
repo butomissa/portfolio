@@ -5,7 +5,6 @@
         <div id="intro">
             <p class="title">新互联网家</p>
             <p class="text">新互联网家侧重小区功能的物业管理类 APP，是联通进入小区物业管理服务体系的一个尝试，拓展线下业务线及与宽带业务协同发展。主要是小程序客户端，其次是 iOS 和 Android 客户端。</p>
-            <p class="text">该项目因业务调整，目前已停止运营。</p>
             <div class="split"/>
             <p class="text">项目主要工作：负责新互联网家主体 UI/UE 设计、部分相关活动页 UI 及物料制作，及 APP 新功能需求涉及的 UI 优化。</p>
             <p class="text">绘制页面共<b>超过 100 </b>个。</p>

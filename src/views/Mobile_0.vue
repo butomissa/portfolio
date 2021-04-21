@@ -3,9 +3,8 @@
     <div id="info">
         <img :src="logo" id="logo">
         <div id="intro">
-            <p class="title">智慧餐厅</p>
+            <p class="title">互联网家智慧餐厅</p>
             <p class="text">智慧餐厅是一款用于线下餐厅门店点餐的小程序，囊括到店点餐及外送服务功能。</p>
-            <p class="text">该项目因业务调整，目前已停止运营。</p>
             <div class="split"/>
             <p class="text">项目主要工作：负责智慧餐厅 2.0 整体 UI/UE 改版工作，完成旧版本迭代和新功能 UI 设计并交付开发。</p>
             <p class="text">功能模块设计共<b> 27 </b>个，绘制页面共<b> 370 </b>个。</p>
